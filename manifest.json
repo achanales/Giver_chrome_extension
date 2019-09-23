@@ -12,7 +12,14 @@
   "default_locale": "en",
   "background": {
     "page": "src/bg/background.html",
-    "persistent": true
+    "persistent": false
+  },
+  "content_scripts": {
+    
+    "matches":["https://*.vox.com/*"],
+
+    "js": ["content_script.js"]
+
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
