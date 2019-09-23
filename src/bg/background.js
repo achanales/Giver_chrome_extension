@@ -1,16 +1,14 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
-
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
+console.log('background running')
 
 
-//example of using a message handler from the inject scripts
-//chrome.extension.onMessage.addListener(
-//  function(request, sender, sendResponse) {
-//  	chrome.pageAction.show(sender.tab.id);
-//    sendResponse();
-//  });
+chrome.runtime.onMessage.addListener((msg, sender) => {
+  // First, validate the message's structure.
+  if (msg.subject === 'sendHeadline') {
+    // Enable the page-action for the requesting tab.
+    console.log('message recieved')
+    console.log(msg.headline_text)
+  }
+});
 
 function reset (){
 
@@ -23,16 +21,16 @@ function reset (){
 	//});
 }
 
-reset();
+//reset();
 
 // Add a listenser when DOM is loaded.
-chrome.webNavigation.onDOMContentLoaded.addListener(function (details) {
+//chrome.webNavigation.onDOMContentLoaded.addListener(function (details) {
 
-	var url = details.url;
-	reset();
+//	var url = details.url;
+	//reset();
 
-	// If en.wikipedia.org is nativaged.
-	if (url.includes("https://www.vox.com/")) {
-            chrome.browserAction.setIcon({path : "../../icons/get_started16.png"});
-        }
-});
+	// If vox is nativaged.
+//	if (url.includes("https://www.vox.com/")) {
+//            chrome.browserAction.setIcon({path : "../../icons/get_started16.png"});
+ //       }
+//});
