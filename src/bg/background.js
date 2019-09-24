@@ -23,14 +23,34 @@ function reset (){
 
 //reset();
 
-// Add a listenser when DOM is loaded.
-//chrome.webNavigation.onDOMContentLoaded.addListener(function (details) {
+api_server = "http://67.205.138.102:8000/";
 
-//	var url = details.url;
-	//reset();
+chrome.webNavigation.onDOMContentLoaded.addListener(function (details) {
 
-	// If vox is nativaged.
-//	if (url.includes("https://www.vox.com/")) {
-//            chrome.browserAction.setIcon({path : "../../icons/get_started16.png"});
- //       }
-//});
+	var url = details.url;
+	reset();
+
+	// If en.wikipedia.org is nativaged.
+	if (url.includes("https://en.wikipedia.org/wiki/")) {
+
+		var topic = url.replace("https://en.wikipedia.org/wiki/", "");
+
+		// URL for http requests
+		var req_url = api_server + "submission/?wiki_topic=" + topic;
+
+		// Send http requests
+		fetch(req_url)
+		.then(r => r.text())
+		.then(function(result) {
+			result_json = JSON.parse(result);
+			if (result_json.found) {
+				// Store the fetched data into local memory for display
+				chrome.storage.local.set({events: result_json.events}, function() {
+					console.log("Found events");
+					// Change to colored icon
+					chrome.browserAction.setIcon({path : "../../icons/Logo.png"});
+        		});
+			}
+		});
+	}
+});
