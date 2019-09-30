@@ -6,8 +6,8 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 	if (msg.subject === 'reset'){
 		console.log("resetting popup")
 
-		chrome.browserAction.setPopup({popup: "src/browser_action/popup.html"});
-  		window.location.href="src/browser_action/popup.html";
+		//chrome.browserAction.setPopup({popup: "src/browser_action/popup.html"});
+  	//	window.location.href="src/browser_action/popup.html";
 		// chrome.runtime.getBackgroundPage(function(bg){
 		// 	document.body.innerHTML = "src/browser_action/popup.html"
 		// 	console.log(document.body.innerHTML)
@@ -47,6 +47,7 @@ chrome.runtime.getBackgroundPage(function(bg){
         let scores = [charities_json[0]['score'], charities_json[1]['score'],charities_json[2]['score']]
         let links = [charities_json[0]['link'], charities_json[1]['link'],charities_json[2]['link']]
         let subcats = [charities_json[0]['subcategory'], charities_json[1]['subcategory'],charities_json[2]['subcategory']]
+        let descriptions = [charities_json[0]['description'], charities_json[1]['description'],charities_json[2]['description']]
 
         console.log(names)
         console.log(scores)
@@ -55,42 +56,51 @@ chrome.runtime.getBackgroundPage(function(bg){
         var i;
         for (i = 0; i < names.length; i++) {
 
-              if (i === 2) {
-              	var elmnt = document.createElement("li")
-              } else{
-              	var elmnt = document.createElement("li")
-              }
               var elmnt = document.createElement("div")
               elmnt.setAttribute("class", "charity");
 
-              // Obtain the event name, venue and link.
+              // Obtain the charity ifno.
               var charity_name =names[i];
               var charity_link = links[i];
               var charity_score = scores[i];
               var charity_subcat = subcats[i];
+              var charity_description = descriptions[i];
 
               console.log(charity_name)
               console.log(charity_link)
               console.log(charity_score)
 
+
+              // Change the header text
               document.getElementsByClassName('default')[0].innerHTML  = "You might consider donating to the following charities";
 
-              // Container for the event score.
+              // Container for the charity score.
               var score = document.createElement("div");
               score.innerHTML = 'Score: '.concat(charity_score);
               score.setAttribute("class", "charityinfo");
 
+              // Container for the subcategory
               var subcat = document.createElement("div");
               subcat.innerHTML = 'Category: '.concat(charity_subcat);
               subcat.setAttribute("class", "charityinfo");
 
-              var name = document.createElement("div");
-			  name.innerHTML = charity_name;
+              // Conatiner for name + dropdown
+              var name = document.createElement("button");
+			        name.innerHTML = charity_name;
               name.setAttribute("class", "name");
+
+              var panel = document.createElement("div");
+              panel.setAttribute("class", "panel");
+
+              var par = document.createElement("p"); 
+              var textnode = document.createTextNode(charity_description); 
+
+              par.appendChild(textnode)
+              panel.appendChild(par)
 
 
               var link = document.createElement("div");
-			  link.setAttribute("class", "link");
+			        link.setAttribute("class", "link");
 
               var link_ref = document.createElement("a");
               // Open a blank tab when the link is clicked.
@@ -102,6 +112,7 @@ chrome.runtime.getBackgroundPage(function(bg){
 
               // Put the score and link to the element
               elmnt.appendChild(name);
+              elmnt.appendChild(panel);
               elmnt.appendChild(subcat);
               elmnt.appendChild(score);
               elmnt.appendChild(link);
@@ -110,6 +121,25 @@ chrome.runtime.getBackgroundPage(function(bg){
               charity_list.appendChild(elmnt);              
 
                 }
+
+                var acc = document.getElementsByClassName("name");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                  /* Toggle between adding and removing the "active" class,
+                  to highlight the button that controls the panel */
+                  this.classList.toggle("active");
+
+                  /* Toggle between hiding and showing the active panel */
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                  } else {
+                    panel.style.display = "block";
+                  }
+                });
+}
 
 
 

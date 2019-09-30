@@ -12,16 +12,16 @@
   "default_locale": "en",
   "background": {
     "persistent": false,
-    "scripts": ["js/jquery-3.4.1.min.js", "src/bg/background.js"]
+    "scripts": ["js/jquery-3.4.1.min.js", "js/jquery.ogp.js","src/bg/background.js"]
 
   },
   "content_scripts":[ {
     
     "matches":["https://*.vox.com/*", "https://*.cnn.com/*","https://*.nytimes.com/*", "https://*.npr.org/*",
               "https://*.news.yahoo.com/*", "https://*.news.google.com/*", "https://*.huffpost.com/*",
-              "https://*.foxnews.com/*","https://*.washingtonpost.com/*","https://*.nbcnews.com/*", "https://*.theguardian.com/*",],
+              "https://*.foxnews.com/*","https://*.washingtonpost.com/*","https://*.nbcnews.com/*", "https://*.theguardian.com/*"],
 
-    "js": ["src/content_script/content_script.js"]
+    "js": ["js/jquery-3.4.1.min.js", "js/jquery.ogp.js","src/content_script/content_script.js"]
 
   }],
   "browser_action": {

@@ -5,8 +5,22 @@ chrome.runtime.onMessage.addListener(
 			console.log('I made it in')
 
 			// Get Headling from document title
-			let headline = document.title;
+			//let headline = document.title;
 
+			//console.log(headline)
+
+			//let html = document.body.innerHTML
+
+			//jsondata = jQuery('html').ogp()
+
+			let description = document.querySelectorAll('meta[property="og:description"]')[0]['content']
+
+			let title = document.querySelectorAll('meta[property="og:title"]')[0]['content']
+
+			let headline = title.concat(' ', description)
+
+
+			console.log(headline)
 			// Send to background
 			chrome.runtime.sendMessage(
 				{subject: 'sendHeadline',
