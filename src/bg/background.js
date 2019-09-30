@@ -1,5 +1,36 @@
 console.log('background running')
 
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+
+  if (changeInfo.status == 'complete' && tab.active) {
+    
+
+   //  var dt;
+   //  $.get('src/browser_action/popup.html', function (data) {
+   //      dt = data;
+   //      // data contains your html
+   //  });
+// let dt
+ //   $.get('src/browser_action/popup.html', function (data) {
+ //   		console
+ //    	dt = $(data).find('jquery-load-point');
+ //    // data contains your html
+	// });
+
+
+  	// 	$('#result').load('src/browser_action/popup.html #jquery-load-point', function(result) {
+   //  			var data = $('#result').html();
+			// });
+
+		console.log("Events reset");
+		// Send to popup
+		chrome.runtime.sendMessage(
+		{subject: 'reset'}
+		)
+
+  }
+})
+
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.message === "startFunc") {
@@ -7,6 +38,7 @@ chrome.runtime.onMessage.addListener(
             let activeTab = tabs[0];
             chrome.tabs.sendMessage(activeTab.id, {"message": "get_data"});
             console.log('Background: pop-up click received')
+
         })
     }
 })
@@ -39,7 +71,8 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 	 		  result_json = JSON.parse(result);
 	 		  console.log(result_json)
 
-	 		  	// Send to popu
+
+	 		  	// Send to popup
 				chrome.runtime.sendMessage(
 				{subject: 'sendCharities',
 				message: result_json}
@@ -52,16 +85,7 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
   });
 
 
-// function reset (){
 
-// 	// set the icon to greyscale 
-// 	chrome.browserAction.setIcon({path : "../../icons/icon19.png"});
-
-// 	// clean the local storage
-// 	//chrome.storage.local.clear(function () {
-// 	//	console.log("Events reset");
-// 	//});
-// }
 
 // //reset();
 

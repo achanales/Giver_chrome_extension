@@ -11,20 +11,23 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": false
+    "persistent": false,
+    "scripts": ["js/jquery-3.4.1.min.js", "src/bg/background.js"]
+
   },
   "content_scripts":[ {
     
-    "matches":["https://*.vox.com/*", "https://*.cnn.com/*","https://*.nytimes.com/*"],
+    "matches":["https://*.vox.com/*", "https://*.cnn.com/*","https://*.nytimes.com/*", "https://*.npr.org/*",
+              "https://*.news.yahoo.com/*", "https://*.news.google.com/*", "https://*.huffpost.com/*",
+              "https://*.foxnews.com/*","https://*.washingtonpost.com/*","https://*.nbcnews.com/*", "https://*.theguardian.com/*",],
 
     "js": ["src/content_script/content_script.js"]
 
   }],
   "browser_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "browser action demo",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_title": "Giver",
+    "default_popup": "src/browser_action/popup.html"
   },
   "permissions": [
     "tabs",

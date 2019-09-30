@@ -2,6 +2,20 @@ body {
   margin: 0px 0px 0px 0px !important;
 }
 
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("/icons/test.png");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .charity_container {
   /*display: none;*/
   /*display: block;*/
@@ -12,34 +26,34 @@ body {
   height: 50px;
   width: 300px;
   /*box-shadow: 0 3px 10px hsl(0, 0%, 30%);*/
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   /*font-family: Georgia, Helvetica, Arial, sans-serif;*/
   /*box-sizing: border-box;*/
 }
 
 h4 {  
-  padding: 16px 16px 16px 16px;
-  font-size: 15px;
+  padding: 16px 16px 8px 16px;
+  font-size: 18px;
   color: hsl(0, 0%, 50%);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.charities {
+/*charities {
   list-style: none;
-  padding: 0px 0px 0px 0px;
+  padding: 3px 0px 3px 0px;
 }
 
 .charities a {
-  font-size: 15px;
-  background-color: hsl(0, 0%, 100%, 0);
+  font-size: 24px;
+  background-color: #CDCDCD;
   color: hsl(0, 0%, 10%);
   display: block;
   text-decoration: none;
 }
-
 .charities li {
-  /*font-size: 14px;*/
-  background-color: hsl(0, 0%, 100%);
+  /*font-size: 14px;
+  font-size: 20px;
+  background-color: #CDCDCD;
   color: hsl(0, 0%, 20%);
   display: block;
   padding: 8px 20px 8px 20px;
@@ -48,32 +62,66 @@ h4 {
 }
 
 .charities li:hover {
-  background-color: hsl(27, 84%, 77%, 1);
+  background-color: #CDCDCD;
   text-decoration: none;
 }
 
 .charities ul {
-  /*font-size: 14px;*/
-  background-color: hsl(0, 0%, 100%);
+  background-color:#CDCDCD;
   color: hsl(0, 0%, 20%);
   display: block;
   padding: 8px 20px 8px 20px;
   text-decoration: none;
+  list-style-type: none
 /*  border-bottom: 1px solid hsl(0, 0%, 80%);
-*/}
+}
 
 .charities ul:hover {
-  background-color: hsl(27, 84%, 77%, 1);
+  background-color: #E8D7F1;
+  text-decoration: none;
+}*/
+
+.charity {
+  background-color: #FFF;
+  padding: 10px 10px 10px 10px;
+}
+
+.charity:hover {
+  background-color: #E8D7F1;
   text-decoration: none;
 }
 
-.score {
-  font-size: 12px;
+.name {
+  font-size: 24px;
   font-style: bold;
-  background-color: hsl(0, 0%, 100%, 0);
+  background-color: #CDCDCD;
   color: hsl(0, 0%, 40%);
   display: block;
-  padding: 0px 8px 4px 0px;
+  padding: 0px 10px 4px 10px;
+  text-decoration: none;
+
+}
+.link {
+  font-size: 14px;
+  background-color: #CDCDCD;
+  color: hsl(0, 0%, 10%);
+  padding: 0px 10px 4px 10px;
+}
+.link a{
+  
+  background-color: #CDCDCD;
+  color: hsl(0, 0%, 10%);
+  display: block;
+  text-decoration: none;
+}
+
+.charityinfo {
+  font-size: 14px;
+  font-style: bold;
+  background-color: #CDCDCD;
+  color: hsl(0, 0%, 40%);
+  display: block;
+  padding: 0px 10px 4px 10px;
   text-decoration: none;
 }
 /*
