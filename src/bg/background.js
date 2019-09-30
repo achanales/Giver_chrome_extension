@@ -22,6 +22,8 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
    //  			var data = $('#result').html();
 			// });
 
+        			
+
 		console.log("Events reset");
 		// Send to popup
 		chrome.runtime.sendMessage(
