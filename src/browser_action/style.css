@@ -4,7 +4,7 @@ body {
 
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: url("/icons/test.png");
+  background-image: url("/icons/banner.png");
 
   /* Set a specific height */
   height: 100%;
@@ -32,9 +32,9 @@ body {
 }
 
 h4 {  
-  padding: 16px 16px 8px 16px;
+  padding: 4px 4px 2px 4px;
   font-size: 18px;
-  color: hsl(0, 0%, 50%);
+  color: #2E293B;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -84,44 +84,47 @@ h4 {
 .charity-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #B03F59;
   min-width: 160px;
+  color: #F5EDEE;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .charity {
-  background-color: #FFF;
+  background-color: white;
   padding: 10px 10px 10px 10px;
 }
 
 .charity:hover {
-  background-color: #E8D7F1;
+  background-color: #B03F59;
   text-decoration: none;
 }
 
 .name {
-  font-size: 24px;
+  font-size: 20px;
   font-style: bold;
-  background-color: #CDCDCD;
-  color: hsl(0, 0%, 40%);
+  background-color: white;
+  color: #009FB7;
   display: block;
   padding: 0px 10px 4px 10px;
+  border: none;
+  text-align: left
   text-decoration: none;
   transition: 0.4s;
   cursor: pointer;
 
 }
 .link {
-  font-size: 14px;
-  background-color: #CDCDCD;
-  color: hsl(0, 0%, 10%);
+  font-size: 16px;
+  background-color: white;
+  color: #B03F59;
   padding: 0px 10px 4px 10px;
 }
 .link a{
   
-  background-color: #CDCDCD;
-  color: hsl(0, 0%, 10%);
+  background-color: white;
+  color: #B03F59;
   display: block;
   text-decoration: none;
 }
@@ -129,20 +132,21 @@ h4 {
 .charityinfo {
   font-size: 14px;
   font-style: bold;
-  background-color: #CDCDCD;
-  color: hsl(0, 0%, 40%);
+  background-color: white;
+  color: #2E293B;
   display: block;
   padding: 0px 10px 4px 10px;
   text-decoration: none;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .name:hover {
-  background-color: #ccc;
-}
+/*.active, .name:hover {
+  background-color: white;
+}*/
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: #B03F59;
+  color: #F5EDEE;
   display: none;
   overflow: hidden;
 }

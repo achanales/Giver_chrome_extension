@@ -1,13 +1,13 @@
 {
-  "name": "Insight Extension",
+  "name": "Giver",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "An tool to recommend charities related to the content of news article",
   "homepage_url": "http://extensionizr.com",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/giver_icon16.png",
+    "48": "icons/giver_icon48.png",
+    "128": "icons/giver_icon128.png"
   },
   "default_locale": "en",
   "background": {
@@ -25,7 +25,7 @@
 
   }],
   "browser_action": {
-    "default_icon": "icons/icon19.png",
+    "default_icon": "icons/giver_icon19.png",
     "default_title": "Giver",
     "default_popup": "src/browser_action/popup.html"
   },
