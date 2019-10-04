@@ -19,7 +19,14 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 	}
 })
 
- 
+chrome.runtime.getBackgroundPage(function(bg){
+  if(bg.sessionDataHTML){
+  	console.log(bg)
+    document.body.innerHTML = bg.sessionDataHTML; 
+  }
+  setInterval(function(){
+    bg.sessionDataHTML = document.body.innerHTML
+  },1000);    
 
   chrome.runtime.onMessage.addListener((msg, sender) => {
   // First, validate the message's structure.
@@ -69,7 +76,7 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 
               // Container for the charity score.
               var score = document.createElement("div");
-              score.innerHTML = 'Transparency Rating: '.concat(charity_score);
+              score.innerHTML = 'Score: '.concat(charity_score);
               score.setAttribute("class", "charityinfo");
 
               // Container for the subcategory
@@ -132,11 +139,13 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
                     panel.style.display = "block";
                   }
                 });
+}
 
-            }
-        }
+
+
+      }
     });
-
+})
 
  
 

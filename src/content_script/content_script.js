@@ -13,11 +13,11 @@ chrome.runtime.onMessage.addListener(
 
 			//jsondata = jQuery('html').ogp()
 
-			let description = document.querySelectorAll('meta[property="og:description"]')[0]['content']
+			//let description = document.querySelectorAll('meta[property="og:description"]')[0]['content']
 
-			let title = document.querySelectorAll('meta[property="og:title"]')[0]['content']
+			let headline = document.querySelectorAll('meta[property="og:title"]')[0]['content']
 
-			let headline = title.concat(' ', description)
+			//let headline = title.concat(' ', description)
 
 
 			console.log(headline)

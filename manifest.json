@@ -16,11 +16,9 @@
 
   },
   "content_scripts":[ {
-    
-    "matches":["https://*.vox.com/*", "https://*.cnn.com/*","https://*.nytimes.com/*", "https://*.npr.org/*",
-              "https://*.news.yahoo.com/*", "https://*.news.google.com/*", "https://*.huffpost.com/*",
-              "https://*.foxnews.com/*","https://*.washingtonpost.com/*","https://*.nbcnews.com/*", "https://*.theguardian.com/*"],
-
+      
+    "matches": ["<all_urls>"],  
+      
     "js": ["js/jquery-3.4.1.min.js", "js/jquery.ogp.js","src/content_script/content_script.js"]
 
   }],
