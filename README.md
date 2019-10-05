@@ -1,1 +1,1 @@
-# insight_chrome_extension
+# Giver chrome extension
