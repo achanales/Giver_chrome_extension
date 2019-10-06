@@ -109,12 +109,14 @@ h4 {
   display: block;
   padding: 0px 10px 4px 10px;
   border: none;
-  text-align: left
+  text-align: left;
   text-decoration: none;
   transition: 0.4s;
   cursor: pointer;
 
 }
+.name:focus {outline:0;}
+
 .link {
   font-size: 16px;
   background-color: white;
