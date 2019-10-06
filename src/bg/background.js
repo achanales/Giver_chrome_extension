@@ -54,16 +54,18 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
 	    console.log(msg.headline_text)
 
 
-	    let headline_to_api = {"message": msg.headline_text};
+	    let to_api = {"headline": msg.headline_text, 
+	                   "article": msg.article_text
+	               };
 
-	    console.log(headline_to_api)
+	    console.log(to_api)
 
 		// summarize and send back
 		const api_url = 'https://us-central1-charityrecommender.cloudfunctions.net/recommend';
 
 		fetch(api_url, {
 	  			method: 'POST',
-	  			body: JSON.stringify(headline_to_api),
+	  			body: JSON.stringify(to_api),
 	  			headers:{'Content-Type': 'application/json'} 
 	  			})
 		.then(r => r.text())

@@ -4,27 +4,31 @@ chrome.runtime.onMessage.addListener(
 		if (msg.message === "get_data") {
 			console.log('I made it in')
 
-			// Get Headling from document title
-			//let headline = document.title;
-
-			//console.log(headline)
-
-			//let html = document.body.innerHTML
-
-			//jsondata = jQuery('html').ogp()
-
-			//let description = document.querySelectorAll('meta[property="og:description"]')[0]['content']
+			// Get headline
 
 			let headline = document.querySelectorAll('meta[property="og:title"]')[0]['content']
 
-			//let headline = title.concat(' ', description)
+			// Grab all paragraphs in article
+
+			let article = document.querySelectorAll('p')
+			let articleLength = article.length
+
+			// Loop over each paragraph and concatenate text
+			let articleText = '';
+			for (var i = 0; i < articleLength; i++) {
+    			articleText = articleText.concat(' ',article[i]['innerText']);
+    			console.log(article[i]['innerText'])
+				}
+
+			console.log(articleText)
 
 
 			console.log(headline)
 			// Send to background
 			chrome.runtime.sendMessage(
 				{subject: 'sendHeadline',
-				headline_text: headline}
+				headline_text: headline,
+				article_text: articleText}
 			);
 
 		}
