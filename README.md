@@ -12,6 +12,9 @@ If you want to test out the chrome extension complete the following steps:
 5) Load the chrome extension directory
 6) The extension logo should appear at the top right corner of your browser
 
+
+Example Screenshot: 
+
 ![alt text][screenshot]
 
 [screenshot]: https://github.com/achanales/Giver_chrome_extension/blob/master/icons/giver_screenshot.png
