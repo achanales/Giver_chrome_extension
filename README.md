@@ -2,7 +2,7 @@
 
 [logo]: https://github.com/achanales/Giver_chrome_extension/blob/master/icons/banner.png "Giver"
 
-Giver is chrome extension that interfaces with news webistes to recommend charities related to the content of the article you are reading. 
+Giver is chrome extension that interfaces with news websites to recommend charities related to the content of the article you are reading. 
 
 If you want to test out the chrome extension complete the following steps:
 1) Download this repo 
