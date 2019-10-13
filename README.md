@@ -13,7 +13,7 @@ If you want to test out the chrome extension complete the following steps:
 6) The extension logo should appear at the top right corner of your browser
 
 
-Example Screenshot: 
+Screenshot of Giver in action: 
 
 ![alt text][screenshot]
 
